@@ -3,12 +3,12 @@
   vars:
     Uname: "admin"
     Pass: "admin"
-    HostName: "192.168.1.2:8080"
+    HostName: "<ip_of_host>:8080"
     TokenName: "11797dbe987f8dfc78f64cf8298666903f"
   tasks:
   - name: Get crumb and session cookie
     uri:
-      url: "http://192.168.1.2:8080/crumbIssuer/api/xml?xpath=concat(//crumbRequestField,%22:%22,//crumb)"
+      url: "http://<ip_of_host>:8080/crumbIssuer/api/xml?xpath=concat(//crumbRequestField,%22:%22,//crumb)"
       method: GET
       user: "{{ Uname }}"
       password: "{{ Pass }}"
